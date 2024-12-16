@@ -1,0 +1,56 @@
+.red-semi-transparent {
+    --width: 100px;
+    --height: 100px;
+    --length: 100px;
+
+    width: var(--width);
+    height: var(--height);
+    background-color: rgba(255, 0, 0, 0.5);
+    position: relative;
+    margin: auto;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+  }
+
+  .red-semi-transparent .face {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+  }
+
+  .red-semi-transparent .face.front {
+    width: var(--width);
+    height: var(--height);
+    transform: translateZ(calc(var(--length) / 2));
+  }
+
+  .red-semi-transparent .face.back {
+    width: var(--width);
+    height: var(--height);
+    transform: translateZ(calc(-1 * var(--length) / 2)) rotateY(180deg);
+  }
+
+  .red-semi-transparent .face.top {
+    width: var(--width);
+    height: var(--length);
+    transform: rotateX(90deg) translateZ(calc(var(--height) / 2));
+  }
+
+  .red-semi-transparent .face.bottom {
+    width: var(--width);
+    height: var(--length);
+    transform: rotateX(-90deg) translateZ(calc(var(--height) / 2));
+  }
+
+  .red-semi-transparent .face.left {
+    width: var(--length);
+    height: var(--height);
+    transform: rotateY(-90deg) translateZ(calc(var(--width) / 2));
+  }
+
+  .red-semi-transparent .face.right {
+    width: var(--length);
+    height: var(--height);
+    transform: rotateY(90deg) translateZ(calc(var(--width) / 2));
+  }

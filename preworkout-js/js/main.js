@@ -1,0 +1,1 @@
+console.log("Moje Imię to Adam");

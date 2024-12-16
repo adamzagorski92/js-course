@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  div {
+    margin-bottom: 20px;
+  }
+  
+  #drawing-area {
+    perspective: 1000px;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    padding: 300px;
+  }
+  
+  .cuboid {
+    position: relative;
+    transform-style: preserve-3d;
+    width: var(--width, 100px);
+    height: var(--height, 100px);
+    transform: rotateX(10deg) rotateY(20deg);
+  }
+  
+  .face {
+    position: absolute;
+    backface-visibility: hidden;
+    border: 1px dashed rgba(0, 0, 0, 0.5);
+  }
+  
+  .front {
+    background-color: rgba(255, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    transform: translateZ(calc(var(--length, 100px) / 2));
+  }
+  
+  .back {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(calc(-1 * var(--length, 100px) / 2));
+  }
+  
+  .top {
+    background-color: #ccc;
+    width: 100%;
+    height: calc(var(--length, 100px));
+    transform: rotateX(90deg) translateZ(calc(var(--height, 100px) / 2));
+  }
+  
+  .bottom {
+    background-color: #ccc;
+    width: 100%;
+    height: calc(var(--length, 100px));
+    transform: rotateX(-90deg) translateZ(calc(var(--height, 100px) / 2));
+  }
+  
+  .left {
+    background-color: #ccc;
+    width: calc(var(--length, 100px));
+    height: 100%;
+    transform: rotateY(-90deg) translateZ(calc(var(--width, 100px) / 2));
+  }
+  
+  .right {
+    background-color: #ccc;
+    width: calc(var(--length, 100px));
+    height: 100%;
+    transform: rotateY(90deg) translateZ(calc(var(--width, 100px) / 2));
+  }
+  
